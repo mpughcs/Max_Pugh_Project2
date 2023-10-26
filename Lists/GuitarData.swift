@@ -8,6 +8,7 @@
 import SwiftUI
 var guitarData: [Guitar] = loadJson("GuitarData.json")
 
+//this file loads and parses our json, throwing errors when they are encountered. 
 func loadJson < T: Decodable> (_ filename:String) -> T {
     
     let data: Data

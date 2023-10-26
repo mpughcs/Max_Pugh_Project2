@@ -1,5 +1,7 @@
 import Foundation
 
+
+//this struct represents our data object outlined by our json
 struct Guitar : Codable, Identifiable{
     var id: String
     var brand: String

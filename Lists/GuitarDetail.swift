@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+//This view is responsible for displaying the details of a guitar.
+
 struct GuitarDetail: View {
     @State private var isForSale: Bool
 
@@ -17,7 +19,7 @@ struct GuitarDetail: View {
     }
 
     let selectedGuitar: Guitar
-
+//    we maintain a selectedGuitar and isForSale state variable. The selectedGuitar is passed in from the parent view, and isForSale is initialized to the forSale property of the selectedGuitar.
     var body: some View {
         Form {
             Section(header: Text("Guitar Details")) {
