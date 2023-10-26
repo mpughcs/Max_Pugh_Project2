@@ -1,0 +1,41 @@
+[
+    {
+        "id": "aa32jj887hhg55",
+        "brand": "fender",
+        "model": "stratocaster",
+        "year": "1954",
+        "color": "sunburst",
+        "price": "10000.00",
+        "forSale": true,
+        
+    },
+    {
+        "id": "aa32jj887hhg56",
+        "brand": "Fender",
+        "model": "Telecaster",
+        "year": "1954",
+        "color": "sunburst",
+        "price": "10000",
+        "forSale": true,
+    },
+    {
+        "id": "aa32jj887hhg57",
+        "brand": "Gibson",
+        "model": "Les Paul",
+        "year": "1954",
+        "color": "sunburst",
+        "price": "10000",
+        "forSale": true,
+    },
+    {
+        "id": "aa32jj887hhg58",
+        "brand": "Gibson",
+        "model": "SG",
+        "year": "1954",
+        "color": "sunburst",
+        "price": "10000",
+        "forSale": true,
+    }
+    
+]
+    

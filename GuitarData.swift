@@ -1,12 +1,12 @@
 //
-//  CarData.swift
+//  GuitarData.swift
 //  Lists
 //
 //  Created by Max Pugh on 10/12/23.
 //
 
 import SwiftUI
-var carData: [Car] = loadJson("carData.json")
+var guitarData: [Guitar] = loadJson("GuitarData.json")
 
 func loadJson < T: Decodable> (_ filename:String) -> T {
     

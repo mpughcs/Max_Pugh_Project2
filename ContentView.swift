@@ -8,44 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var carStore: CarStore = CarStore(cars: carData)
+    @StateObject var guitarStore: GuitarStore = GuitarStore(guitars: guitarData)
     var body: some View {
         NavigationView{
             List{
-                ForEach (carStore.cars) { car in
-                    ListCell(car: car)
+                ForEach (guitarStore.guitars) { guitar in
+                    ListCell(guitar: guitar)
                     
                 }.onDelete(perform: deleteItems)
                     .onMove(perform:moveItems)
             }
-            .navigationBarTitle(Text("EV Cars"))
-            .navigationBarItems(leading:NavigationLink(destination:AddNewCar(carStore:self.carStore)){
+            .navigationBarTitle(Text(" Guitar wish list"))
+            .navigationBarItems        (leading:NavigationLink(destination:AddNewGuitar(guitarStore:self.guitarStore)){
                 Text("Add")
             }, trailing:EditButton())
             
         }
-        
     }
     func deleteItems(at offsets: IndexSet){
-        carStore.cars.remove(atOffsets: offsets)
+        guitarStore.guitars.remove(atOffsets: offsets)
     }
     func moveItems(from source: IndexSet, to destination: Int){
-        carStore.cars.move(fromOffsets: source, toOffset: destination)
+        guitarStore.guitars.move(fromOffsets: source, toOffset: destination)
     }
 }
 
 struct ListCell: View {
-    var car : Car
+    var guitar : Guitar
     var body: some View{
-        NavigationLink(destination: CarDetail(selectedCar: car)){
+        NavigationLink(destination: GuitarDetail(selectedGuitar: guitar)){
             HStack{
-                Image(car.imageName)
+                Image(systemName: "guitars.fill")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 60)
                 
                     
-                Text(car.name)
+                Text(guitar.model)
             }
             
         }
