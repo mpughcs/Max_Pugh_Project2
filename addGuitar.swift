@@ -24,7 +24,7 @@ struct AddNewGuitar: View {
 //    here we are creating a new guitar object and adding it to the list
     var body: some View {
         Form {
-                    Section(header: Text("Guitar Details")) {
+                    Section(header: Text("Add Guitar")) {
                         Image(systemName: "guitars.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
