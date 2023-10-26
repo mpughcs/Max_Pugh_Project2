@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+//this view is responsible for adding a new guitar to the list
+
 struct AddNewGuitar: View {
     @StateObject var guitarStore : GuitarStore
     @State var brand : String = ""
@@ -18,10 +20,12 @@ struct AddNewGuitar: View {
     @State var forSale : Bool = false
     @State var imageUrl : String = ""
 
+    
+//    here we are creating a new guitar object and adding it to the list
     var body: some View {
         Form {
                     Section(header: Text("Guitar Details")) {
-                        Image(systemName: "guitar.fill")
+                        Image(systemName: "guitars.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .padding()
@@ -42,19 +46,21 @@ struct AddNewGuitar: View {
                     }
                 }
     }
+//    this function creates a new guitar object and adds it to the list
     func addNewGuitar(){
         let newGuitar = Guitar(id: UUID().uuidString, brand: brand, model: model, year: year, color: color, price: price, forSale: forSale)
         guitarStore.guitars.append(newGuitar)
     }
 }
 
-
+// this is the preview for the addNewGuitar view
 struct AddNewGuitar_Previews : PreviewProvider{
     static var previews: some View{
         AddNewGuitar(guitarStore: GuitarStore(guitars: guitarData))
     }
 }
 
+// this is a helper view that creates a text field for the user to input data
 struct DataInput: View {
     var title: String
     @Binding var userInput: String
